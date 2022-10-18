@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ConfigReader {
 
 	private Properties properties;
-	private final String propertyFilePath = "C:\\Users\\Khalid\\eclipse-workspace12\\selenium\\configs\\confi.properties";
+	private final String propertyFilePath = "C:\\Users\\Khalid\\git\\testbranch2\\dummypro\\configs\\confi.properties";
 	WebDriver driver;
 
 	public ConfigReader() {
