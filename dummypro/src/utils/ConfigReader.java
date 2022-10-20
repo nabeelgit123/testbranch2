@@ -1,11 +1,15 @@
 package utils;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -50,6 +54,14 @@ public class ConfigReader {
 		else
 			throw new RuntimeException("URL not specified in the Config.properties file." + url);
 
+	}
+
+	public void takeScreenShot(String fileName) throws IOException {
+		// from io
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File src = ts.getScreenshotAs(OutputType.FILE);
+		File dest = new File(".\\screenShots\\" + fileName + ".jpg");
+		FileUtils.copyFile(src, dest);
 	}
 
 	public WebDriver launchUrl() {
